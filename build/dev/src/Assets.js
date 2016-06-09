@@ -1,4 +1,4 @@
-// var REPOSS = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty('repositoryId'));
+var REPOSS = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty('repositoryId'));
 
 
 
@@ -15,12 +15,15 @@ function Asset(assetInfo){
 
 Asset.prototype.getGoogleId = function() {
 	var mySplitUrl = this.url.split('/d/');
-	this.GoogleId = mySplitUrl.length > 1 ? mySplitUrl[1].split('/')[0] : '';
-	return this.GoogleId;
+	var myOtherSplitUrl = this.url.split('id=');
+	var myScriptUrl = this.url.split('/s/');
+	this.googleId = mySplitUrl.length > 1 ? mySplitUrl[1].split('/')[0] : myOtherSplitUrl.length > 1 ? myOtherSplitUrl[1] : myScriptUrl.length > 1 ? myScriptUrl[1].split('/')[0] : '' ;
+	return this.googleId;
 };
 
 
 
 Asset.prototype.getCreationDate = function() {
-	// body...
+	this.creationDate = 'Hello World';
+	return this.creationDate;
 };

@@ -1,4 +1,4 @@
-// var PAGETITLE = PropertiesService.getScriptProperties().getProperty('pageTitle');
+var PAGETITLE = PropertiesService.getScriptProperties().getProperty('pageTitle');
 
 
 
